@@ -25,7 +25,12 @@ jobs:
 
       # Step 2: Validate composer
       - name: Validate composer.json and composer.lock
-        run: composer validate --strict
+        id: composer-validate
+        run: |
+          VALIDATE_OUTPUT=$(composer validate --strict)
+          echo "$VALIDATE_OUTPUT"
+          echo "output=$VALIDATE_OUTPUT" >> $GITHUB_ENV
+          echo "$VALIDATE_OUTPUT" | grep "composer.json is valid" || echo "Validation contains warnings."
 
       # Step 3: Cache Composer dependencies
       - name: Cache Composer packages
