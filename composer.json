@@ -1,6 +1,7 @@
 {
   "name": "mmarcinkowski-bmp/plugin-a",
   "type": "wordpress-plugin",
+  "license": "Proprietary",
   "version": "1.0.0",
   "minimum-stability": "dev",
   "prefer-stable": true,
