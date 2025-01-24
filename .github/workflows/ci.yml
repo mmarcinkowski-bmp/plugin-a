@@ -49,9 +49,6 @@ jobs:
       # Step 4: Install Composer dependencies
       - name: Configure Composer Authentication
         run: |
-          composer config --global repositories.immediate-composer composer https://github.immediate.co.uk
-          composer config --global http-basic.github.immediate.co.uk username ${{ secrets.IMMEDIATE_GITHUB_TOKEN }}
-          composer config --global github-oauth.github.immediate.co.uk ${{ secrets.IMMEDIATE_GITHUB_TOKEN }}
           composer config --global github-oauth.github.com ${{ secrets.TOKEN_FOR_GITHUB }}
           composer config --global process-timeout 2000
 
