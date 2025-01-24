@@ -51,9 +51,12 @@ jobs:
         run: |
           composer config --global repositories.immediate-composer composer https://github.immediate.co.uk
           composer config --global http-basic.github.immediate.co.uk username ${{ secrets.IMMEDIATE_GITHUB_TOKEN }}
+          composer config --global github-oauth.github.immediate.co.uk ${{ secrets.IMMEDIATE_GITHUB_TOKEN }}
+          composer config --global github-oauth.github.com ${{ secrets.TOKEN_FOR_GITHUB }}
+          composer config --global process-timeout 2000
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress --no-suggest -vvv
 
       # Step 5: Run tests
       - name: Run Tests
