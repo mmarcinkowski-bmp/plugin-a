@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: [ 8.3 ]
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Validate composer
+      - name: Validate composer.json and composer.lock
+        id: composer-validate
+        run: |
+          VALIDATE_OUTPUT=$(composer validate --strict || true)
+          echo "$VALIDATE_OUTPUT"
+          if echo "$VALIDATE_OUTPUT" | grep -q "composer.json is valid"; then
+            echo "Validation succeeded."
+          else
+            echo "Validation contains warnings or errors."
+          fi
+        continue-on-error: true
+
+      # Step 3: Cache Composer dependencies
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      # Step 4: Install Composer dependencies
+      - name: Configure Composer Authentication
+        run: |
+          composer config --global github-oauth.github.com ${{ secrets.TOKEN_FOR_GITHUB }}
+          composer config --global process-timeout 2000
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest -vvv
+
+      # Step 5: Run tests
+      - name: Run Tests
+        run: composer run-tests

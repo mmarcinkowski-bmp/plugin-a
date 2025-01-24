@@ -1,6 +1,58 @@
 {
   "name": "mmarcinkowski-bmp/plugin-a",
+  "description": "Wordpress plugin A test",
   "type": "wordpress-plugin",
+  "license": "proprietary",
   "version": "1.0.0",
-  "require": {}
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "MmarcinkowskiBmp\\Plugin\\PluginA\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MmarcinkowskiBmp\\Plugin\\PluginA\\Test\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "oomphinc/composer-installers-extender": true
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "extra": {
+    "installer-types": [
+      "test-config"
+    ],
+    "installer-paths": {
+      "test-config": [
+        "mmarcinkowski-bmp/test-config"
+      ]
+    }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:mmarcinkowski-bmp/test-config.git"
+    }
+  ],
+  "require": {
+    "php": "^8.3"
+  },
+  "require-dev": {
+    "mmarcinkowski-bmp/test-config": "^1.0"
+  },
+  "scripts": {
+    "run-tests": "composer run-phpunit && composer run-phpcs && composer run-phplint && composer run-phpmd",
+    "run-phpunit": "vendor/bin/phpunit --configuration test-config/phpunit.xml",
+    "run-phpcs": "vendor/bin/phpcs --standard=test-config/phpcs.xml",
+    "run-phplint": "vendor/bin/phplint --configuration test-config/phplint.yml",
+    "run-phpmd": "vendor/bin/phpmd src text test-config/phpmd-src.xml && vendor/bin/phpmd tests text test-config/phpmd-tests.xml",
+    "run-rector": "vendor/bin/rector --config test-config/rector.php",
+    "run-rector--preview": "vendor/bin/rector --config test-config/rector.php --dry-run"
+  }
 }
