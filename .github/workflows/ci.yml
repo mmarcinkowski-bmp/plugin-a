@@ -47,6 +47,11 @@ jobs:
             ${{ runner.os }}-php-
 
       # Step 4: Install Composer dependencies
+      - name: Configure Composer Authentication
+        run: |
+          composer config --global repositories.immediate-composer composer https://github.immediate.co.uk
+          composer config --global http-basic.github.immediate.co.uk username ${{ secrets.IMMEDIATE_GITHUB_TOKEN }}
+
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
