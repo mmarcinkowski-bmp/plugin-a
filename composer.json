@@ -1,7 +1,8 @@
 {
   "name": "mmarcinkowski-bmp/plugin-a",
+  "description": "Wordpress plugin A test",
   "type": "wordpress-plugin",
-  "license": "Proprietary",
+  "license": "proprietary",
   "version": "1.0.0",
   "minimum-stability": "dev",
   "prefer-stable": true,
