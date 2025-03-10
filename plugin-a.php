@@ -9,7 +9,7 @@
  */
 
 function displayPluginAPage() {
-    echo 'Plugin A';
+    echo 'Plugin A test2';
 }
 function addPluginAMenu() {
     add_menu_page(

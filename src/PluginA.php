@@ -8,6 +8,6 @@ class PluginA
 {
     public function action(): string
     {
-        return 'Hello from PluginA v2';
+        return 'Hello from PluginA';
     }
 }
