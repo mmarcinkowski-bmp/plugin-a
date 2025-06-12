@@ -12,6 +12,7 @@ function displayPluginAPage() {
     echo 'Plugin A test2';
 }
 function addPluginAMenu() {
+    // test
     add_menu_page(
         'Plugin A',// page title
         'Plugin A',// menu title
