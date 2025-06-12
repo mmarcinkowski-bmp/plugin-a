@@ -10,7 +10,8 @@ module.exports = {
             changelogFile: 'CHANGELOG.md',
         }],
         {
-            updatePluginVersion: (pluginConfig, context) => {
+            // UPDATE PLUGIN VERSION
+            prepare: (pluginConfig, context) => {
                 const filePath = './plugin-a.php';
                 const contents = fs.readFileSync(filePath, 'utf8');
                 const updated = contents.replace(/Version:\s*[0-9.]+/, `Version: ${context.nextRelease.version}`);
