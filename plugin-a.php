@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Plugin A
  * Description: Test Plugin A
- * Version: 1.1.0
+ * Version: 1.2.1
  * Author: Marcin M
  * License: GPL v2
  */

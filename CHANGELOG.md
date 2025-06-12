@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/mmarcinkowski-bmp/plugin-a/compare/1.2.0...1.2.1) (2025-06-12)
+
+
+### Bug Fixes
+
+* update release config ([6fef701](https://github.com/mmarcinkowski-bmp/plugin-a/commit/6fef701800ad796c4dcd3a9afe20effcac41c1dd))
+
 # [1.2.0](https://github.com/mmarcinkowski-bmp/plugin-a/compare/1.1.0...1.2.0) (2025-06-12)
 
 
