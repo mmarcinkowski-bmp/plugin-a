@@ -1,5 +1,6 @@
 module.exports = {
     branches: ['main'],
+    tagFormat: '${version}', // disables v prefix
     plugins: [
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',
