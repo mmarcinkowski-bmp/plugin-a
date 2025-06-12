@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/mmarcinkowski-bmp/plugin-a/compare/1.1.0...1.2.0) (2025-06-12)
+
+
+### Features
+
+* try update plugin file version ([11368c9](https://github.com/mmarcinkowski-bmp/plugin-a/commit/11368c901785793e3f22e8c755fb22b3886258a9))
+* update release config ([c14245a](https://github.com/mmarcinkowski-bmp/plugin-a/commit/c14245a64e6c9f8a00d0c0a63ae144f351847683))
+
 # [1.1.0](https://github.com/mmarcinkowski-bmp/plugin-a/compare/1.0.3...1.1.0) (2025-06-12)
 
 
