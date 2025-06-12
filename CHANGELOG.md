@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/mmarcinkowski-bmp/plugin-a/compare/1.2.1...2.0.0) (2025-06-12)
+
+
+### Features
+
+* change something ([885f969](https://github.com/mmarcinkowski-bmp/plugin-a/commit/885f9692b9de361753d384ed7114c8d77e578f27))
+
+
+### BREAKING CHANGES
+
+* something broke
+
 ## [1.2.1](https://github.com/mmarcinkowski-bmp/plugin-a/compare/1.2.0...1.2.1) (2025-06-12)
 
 
