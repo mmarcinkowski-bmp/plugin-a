@@ -13,6 +13,6 @@ class PluginATest extends TestCase
     {
         $plugin = new PluginA();
         $this->assertInstanceOf(PluginA::class, $plugin);
-        $this->assertEquals('Hello from PluginA', $plugin->action());
+        $this->assertEquals('Hello from PluginA edited!', $plugin->action());
     }
 }
